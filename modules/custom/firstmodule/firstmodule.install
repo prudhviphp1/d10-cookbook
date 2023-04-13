@@ -1,0 +1,12 @@
+<?php
+/**
+ * Implements hook_install
+ */
+function firstmodule_install(){
+  //Setting the custom site name
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('name','Welcome to Drupal10 Development')
+    ->save();
+
+}
