@@ -1,0 +1,3 @@
+can_promote_nodes:
+  title: 'Can promote the content nodes'
+  description: 'Determines if the user have access to promote the fields on content'
