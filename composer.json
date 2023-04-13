@@ -10,5 +10,11 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true
         }
+    },
+    "name": "drupal/firstmodule",
+    "type": "drupal-firstmodule",
+    "description": "This is an example module from the Drupal10 Development!",
+    "require": {
+        "drupal/core": ">=10"
     }
 }

@@ -3,6 +3,6 @@
 /**
  * Implements hook_page_top().
  */
-function mymodule_page_top() {
+function firstmodule_page_top() {
   \Drupal::messenger()->addStatus('Hello world!');
 }

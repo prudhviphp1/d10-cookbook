@@ -1,4 +1,4 @@
-name: My Module
+name: My First Module
 type: module
 description: This is an example module from the Drupal10 Development!
 core_version_requirement: '>=10'
