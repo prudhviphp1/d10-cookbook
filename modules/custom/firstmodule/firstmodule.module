@@ -31,7 +31,7 @@ function firstmodule_entity_field_access($operation, \Drupal\Core\Field\FieldDef
  * @return void
  * Sending Email to admin whenever the node is inserted
  */
-function mymodule_node_insert(\Drupal\node\NodeInterface $node) {
+function firstmodule_node_insert(\Drupal\node\NodeInterface $node) {
 
   if ($node->isPublished()) {
     $site_mail = \Drupal::config('system.site')->get('mail');
@@ -54,7 +54,7 @@ function mymodule_node_insert(\Drupal\node\NodeInterface $node) {
  * @return void
  * Checking & sending the email if the node is initially not in published state
  */
-function mymodule_node_update(\Drupal\node\NodeInterface $node) {
+function firstmodule_node_update(\Drupal\node\NodeInterface $node) {
 
   if ($node->isPublished()) {
     /** @var \Drupal\node\NodeInterface $original */
@@ -73,4 +73,29 @@ function mymodule_node_update(\Drupal\node\NodeInterface $node) {
       );
     }
   }
+}
+
+/**
+ * Implements hook_mail()
+ * @param $key
+ * @param $message
+ * @param $params
+ * @return void
+ * Sending an email based upon the state of the node
+ */
+function firstmodule_mail($key, &$message, $params) {
+
+  $node = $params['node'];
+  if ($key === 'node_published_insert') {
+    $message['subject'] = 'Newly Published Node entity: '. $node->label();
+  }
+  elseif ($key === 'node_published_update') {
+    $message['subject'] = 'Existing Node Published entity: '. $node->label();
+  }
+  else {
+    return;
+  }
+  $message['body'][] = 'The following node has been published:';
+  $message['body'][] = $node->label();
+  $message['body'][] = $node->toUrl()->setAbsolute()->toString();
 }
