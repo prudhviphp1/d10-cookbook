@@ -4,6 +4,7 @@
  * Implements hook_page_top().
  */
 function firstmodule_page_top() {
+
   // Showing the message at the top of the page
   \Drupal::messenger()->addStatus('Hello world!');
 }
@@ -15,10 +16,86 @@ function firstmodule_page_top() {
  * @return \Drupal\Core\Access\AccessResult|\Drupal\Core\Access\AccessResultAllowed|\Drupal\Core\Access\AccessResultNeutral
  */
 function firstmodule_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account) {
+
   $field_name = $field_definition->getName();
   if ($field_name === 'promote' || $field_name === 'sticky' ) {
     $can_promote_content_nodes = $account->hasPermission('can promote nodes');
     return Drupal\Core\Access\AccessResult::allowedIf($can_promote_content_nodes);
   }
   return \Drupal\Core\Access\AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_type_insert()
+ * @param \Drupal\node\NodeInterface $node
+ * @return void
+ * Sending Email to admin whenever the node is inserted
+ */
+function firstmodule_node_insert(\Drupal\node\NodeInterface $node) {
+
+  if ($node->isPublished()) {
+    $site_mail = \Drupal::config('system.site')->get('mail');
+    /** @var \Drupal\Core\Mail\MailManager $mail_service */
+    // Sending the email using Plugin Manager Mail Service
+    $mail_service = \Drupal::service('plugin.manager.mail');
+    $mail_service->mail(
+      module: 'mymodule',
+      key: 'node_published_insert',
+      to: $site_mail,
+      langcode: 'en',
+      params: ['node' => $node],
+    );
+  }
+}
+
+/**
+ * Implements hook_entity_type_update
+ * @param \Drupal\node\NodeInterface $node
+ * @return void
+ * Checking & sending the email if the node is initially not in published state
+ */
+function firstmodule_node_update(\Drupal\node\NodeInterface $node) {
+
+  if ($node->isPublished()) {
+    /** @var \Drupal\node\NodeInterface $original */
+    $original = $node->original;
+    // Checking the initial state of node
+    if (!$original->isPublished()) {
+      $site_mail = \Drupal::config('system.site')->get('mail');
+      /** @var \Drupal\Core\Mail\MailManager $mail_service */
+      $mail_service = \Drupal::service('plugin.manager.mail');
+      $mail_service->mail(
+        module: 'mymodule',
+        key: 'node_published_update',
+        to: $site_mail,
+        langcode: 'en',
+        params: ['node' => $node],
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_mail()
+ * @param $key
+ * @param $message
+ * @param $params
+ * @return void
+ * Sending an email based upon the state of the node
+ */
+function firstmodule_mail($key, &$message, $params) {
+
+  $node = $params['node'];
+  if ($key === 'node_published_insert') {
+    $message['subject'] = 'Newly Published Node entity: '. $node->label();
+  }
+  elseif ($key === 'node_published_update') {
+    $message['subject'] = 'Existing Node Published entity: '. $node->label();
+  }
+  else {
+    return;
+  }
+  $message['body'][] = 'The following node has been published:';
+  $message['body'][] = $node->label();
+  $message['body'][] = $node->toUrl()->setAbsolute()->toString();
 }
