@@ -1,0 +1,4 @@
+name: My Second Module
+type: module
+description: This is an example module from the Drupal10 Development of how to create drush command
+core_version_requirement: '>=10'
