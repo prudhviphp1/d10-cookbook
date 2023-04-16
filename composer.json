@@ -16,5 +16,15 @@
     "description": "This is an example module from the Drupal10 Development!",
     "require": {
         "drupal/core": ">=10"
+    },
+
+    "name": "org/secondmodule",
+    "type": "drupal-drush",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^10"
+            }
+        }
     }
 }
