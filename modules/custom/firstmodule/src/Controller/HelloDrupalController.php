@@ -15,7 +15,7 @@ class HelloDrupalController extends ControllerBase {
    */
   public function page(): array {
     return [
-      '#markup' => '<p>Hello Drupal!</p>'
+      '#markup' => '<p>Hello Drupal10!</p>'
     ];
   }
 
