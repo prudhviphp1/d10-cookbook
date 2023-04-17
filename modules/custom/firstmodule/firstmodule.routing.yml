@@ -5,3 +5,16 @@ firstmodule.hello_drupal:
     _title: 'Hello Drupal10!'
   requirements:
     _permission: 'access content'
+firstmodule.hello_drupal_user.:
+  path: /hello-drupal/{user}
+  defaults:
+    _controller: Drupal\firstmodule\Controller\HelloDrupalController::user
+    _title: 'Hello User Drupal10!'
+  requirements:
+    user: '\d+'
+    _entity_access: 'user.view'
+  options:
+    parameters:
+      user:
+        type: 'entity:user'
+
