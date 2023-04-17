@@ -30,7 +30,7 @@ firstmodule.site_info:
   requirements:
     _access: 'TRUE'
 firstmodule.pdf_download:
-  path: pdf_download
+  path: /pdf_download
   defaults:
     _controller: Drupal\firstmodule\Controller\DownloadController::page
   requirements:
