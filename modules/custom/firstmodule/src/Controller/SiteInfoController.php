@@ -20,5 +20,10 @@ class SiteInfoController extends ControllerBase {
       'slogan' => $config->get('slogan'),
       'email' => $config->get('email')
     ]);
+
+    // Adding the below line to cache the above config response so that config can only be invalidated
+    // if there is any config change
+    $response->addCacheableDependency($config);
+    return $response;
   }
 }
