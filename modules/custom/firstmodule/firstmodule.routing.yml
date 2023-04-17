@@ -29,8 +29,8 @@ firstmodule.site_info:
     _controller: Drupal\firstmodule\Controller\SiteInfoController::page
   requirements:
     _access: 'TRUE'
-firstmodule.download_file:
-  path: /download-file
+firstmodule.pdf_download:
+  path: pdf_download
   defaults:
     _controller: Drupal\firstmodule\Controller\DownloadController::page
   requirements:
