@@ -1,0 +1,7 @@
+firstmodule.hello_drupal:
+  path: /hello-drupal
+  defaults:
+    _controller: Drupal\firstmodule\Controller\HelloDrupalController::page
+    _title: 'Hello Drupal10!'
+  requirements:
+    _permission: 'access content'
