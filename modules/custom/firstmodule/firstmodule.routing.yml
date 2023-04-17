@@ -17,4 +17,10 @@ firstmodule.hello_drupal_user.:
     parameters:
       user:
         type: 'entity:user'
+firstmodule.user_redirect:
+  path: /user-redirect
+  defaults:
+    _controller: Drupal\firstmodule\Controller\RedirectController::page
+  requirements:
+    _access: 'TRUE'
 
