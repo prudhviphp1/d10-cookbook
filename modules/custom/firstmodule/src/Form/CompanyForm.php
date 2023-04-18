@@ -26,7 +26,7 @@ class CompanyForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state)
   {
 
-    //Grabing the config from the already existing firstmodule.company_settings
+    //Grabbing the config from the already existing firstmodule.company_settings
     //for showing it in the deafult_value placeholder
     $company_settings = $this->config('firstmodule.company_settings');
     $form['company_name'] = [
