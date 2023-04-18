@@ -42,10 +42,16 @@ firstmodule.create_article:
   methods: [POST]
   requirements:
     _access: 'TRUE'
-firstmodule.get_article:
+firstmodule.get_articles:
   path: /getarticles
   defaults:
     _controller: Drupal\firstmodule\Controller\ArticleController::index
   methods: [GET]
+  requirements:
+    _permission: 'access content'
+firstmodule.get_article:
+  path: /articles/{node}
+  defaults:
+    _controller: Drupal\firstmodule\Controller\ArticleController::get
   requirements:
     _permission: 'access content'
