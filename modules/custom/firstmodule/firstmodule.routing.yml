@@ -63,4 +63,12 @@ firstmodule.update_article:
   requirements:
     _access: 'TRUE'
     #   _entity_access: 'node.update'
+firstmodule.delete_article:
+  path: /articles/{node}
+  defaults:
+    _controller: Drupal\firstmodule\Controller\ArticleController::delete
+    methods: [DELETE]
+  requirements:
+    _access: 'TRUE'
+    #   _entity_access: 'node.delete'
 
