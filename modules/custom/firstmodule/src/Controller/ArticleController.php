@@ -76,4 +76,28 @@ class ArticleController extends ControllerBase {
     return new JsonResponse($nodes);
   }
 
+
+  /**
+   * @param Request $request
+   * @return JsonResponse
+   *
+   * Checking the user_access for the node route parameter in the routing file
+   */
+  public function get(\Drupal\node\NodeInterface $node): JsonResponse {
+
+    $entity_type_manager = $this->entityTypeManager();
+    // Checking whether user has access for viewing the node
+    $access_handler = $entity_type_manager->getAccessControlHandler('node');
+
+    $node_access = $access_handler->access($node, 'view');
+
+    // Show 404 page if the user doesn't have the access
+    if (!$node_access) {
+      return new JsonResponse(NULL,404);
+    }
+
+    return new JsonResponse(
+      $node->toArray(),
+    );
+  }
 }
