@@ -35,3 +35,10 @@ firstmodule.pdf_download:
     _controller: Drupal\firstmodule\Controller\DownloadController::page
   requirements:
     _access: 'TRUE'
+firstmodule.create_article:
+  path: /articles
+  defaults:
+    _controller: Drupal\firstmodule\Controller\ArticleController::store
+  methods: [POST]
+  requirements:
+    _access: 'TRUE'
