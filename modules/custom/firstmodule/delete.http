@@ -1,0 +1,2 @@
+DELETE http://localhost/articles/1
+Accept: application/json
