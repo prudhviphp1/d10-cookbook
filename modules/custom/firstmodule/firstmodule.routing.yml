@@ -48,4 +48,4 @@ firstmodule.get_article:
     _controller: Drupal\firstmodule\Controller\ArticleController::index
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _permission: 'access content'
