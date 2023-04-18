@@ -9,16 +9,25 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Url;
 
+/**
+ * @param Request $request
+ * @return JsonResponse
+ *
+ * Creating the content for article nodes by using POST method in the routing file
+ */
 class ArticleController extends ControllerBase {
 
   public function store(Request $request): JsonResponse {
 
     $content = $request()->getContent();
+
+    // Getting the content and then serializing it into JSON
     $json = \Drupal\Component\Serialization\Json::decode($content);
 
     $entity_type_manager = $this->entityTypeManager();
     $node_content = $entity_type_manager->getStorage('node');
 
+    // Creating the article nodes with the above JSON content
     $article = $node_content->create([
       'type'  => 'article',
       'title' => $json['title'],
@@ -32,6 +41,39 @@ class ArticleController extends ControllerBase {
       201,
       ['Location' => $article_url ],
     );
+  }
+
+  /**
+   * @param Request $request
+   * @return JsonResponse
+   *
+   * Getting the article nodes & checking the access_checks and then sorting the content with DESC at top
+   * by using GET method in routing file
+   */
+  public function index(Request $request): JsonResponse {
+
+    // Getting the content and then sorting it out
+    $sort = $request->query->get('sort', 'DESC');
+
+    $entity_type_manager = $this->entityTypeManager();
+    $node_content = $entity_type_manager->getStorage('node');
+
+    // Checking the access_check for the node_content
+    $query = $node_content->getQuery()
+      ->accessCheck('TRUE');
+
+    // Checking the Entity Query Conditions
+    $query->condition('type','article');
+    $query->condition('status','TRUE');
+    $query->sort('created',$sort);
+    $node_id = $query->execute();
+
+    $nodes = $node_content->loadMultiple($node_id);
+    $nodes = array_map(function (\Drupal\node\NodeInterface $node) {
+      return $node->toArray();
+    }, $nodes);
+
+    return new JsonResponse($nodes);
   }
 
 }
