@@ -32,7 +32,6 @@ class ArticleController extends ControllerBase {
       201,
       ['Location' => $article_url ],
     );
-
   }
 
 }
