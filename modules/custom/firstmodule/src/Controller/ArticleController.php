@@ -134,4 +134,16 @@ class ArticleController extends ControllerBase {
       $node->toArray(),
     );
   }
+
+  /**
+   * @param Request $request
+   * @return JsonResponse
+   *
+   * Deleting the node
+   */
+  public function delete( NodeInterface $node): JsonResponse {
+
+    $node->delete();
+    return new JsonResponse(null, 404);
+  }
 }
