@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
 
 /**
  * @param Request $request
@@ -76,7 +77,6 @@ class ArticleController extends ControllerBase {
     return new JsonResponse($nodes);
   }
 
-
   /**
    * @param Request $request
    * @return JsonResponse
@@ -96,6 +96,30 @@ class ArticleController extends ControllerBase {
       return new JsonResponse(NULL,404);
     }
 
+    return new JsonResponse(
+      $node->toArray(),
+    );
+  }
+
+  /**
+   * @param Request $request
+   * @return JsonResponse
+   *
+   * Updating the content in the node
+   */
+  public function update(Request $request, NodeInterface $node): JsonResponse {
+
+    $content = $request->getContent();
+    $json = \Drupal\Component\Serialization\Json::decode($content);
+
+    if(isset($json['title'])) {
+      $node->setTitle($json['title']);
+    }
+
+    if(isset($json['body'])) {
+      $node->set('body', $json['body']);
+    }
+    $node->save();
     return new JsonResponse(
       $node->toArray(),
     );

@@ -55,3 +55,11 @@ firstmodule.get_article:
     _controller: Drupal\firstmodule\Controller\ArticleController::get
   requirements:
     _permission: 'access content'
+firstmodule.update_article:
+  path: /articles/{node}
+  defaults:
+    _controller: Drupal\firstmodule\Controller\ArticleController::update
+  requirements:
+    _access: 'TRUE'
+    #   _entity_access: 'node.update'
+
