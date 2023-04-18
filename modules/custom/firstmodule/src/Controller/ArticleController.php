@@ -119,6 +119,16 @@ class ArticleController extends ControllerBase {
     if(isset($json['body'])) {
       $node->set('body', $json['body']);
     }
+
+    // Checking whether the updated node have any voilations
+    $constraint_voilations = $node->validate();
+    if(count($constraint_voilations) > 0) {
+      $errors[] = 0;
+      foreach($constraint_voilations as $voilations){
+        $errors[] = $voilations->getPropertyPath() .': ' . $voilations->getMessage();
+      }
+      return new JsonResponse($errors, 400);
+    }
     $node->save();
     return new JsonResponse(
       $node->toArray(),
