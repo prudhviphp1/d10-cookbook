@@ -25,6 +25,9 @@ class CompanyForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state)
   {
+
+    //Grabing the config from the already existing firstmodule.company_settings
+    //for showing it in the deafult_value placeholder
     $company_settings = $this->config('firstmodule.company_settings');
     $form['company_name'] = [
       '#type' => 'textfield',
@@ -55,7 +58,9 @@ class CompanyForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
+    //Saving the above data to firstmodule.company_settings config
     $config = $this->configFactory->getEditable('firstmodule.company_settings');
+
     $config->set('company_name', $form_state->getValue('company_name'));
     $config->set('company_telephone', $form_state->getValue('company_telephone'));
     $config->save();
