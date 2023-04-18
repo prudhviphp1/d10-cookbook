@@ -55,6 +55,10 @@ class CompanyForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
-    // TODO: Implement submitForm() method.
+    $config = $this->configFactory->getEditable('firstmodule.company_settings');
+    $config->set('company_name', $form_state->getValue('company_name'));
+    $config->set('company_telephone', $form_state->getValue('company_telephone'));
+    $config->save();
+    $this->messenger()->addStatus('Updated Copany Information');
   }
 }

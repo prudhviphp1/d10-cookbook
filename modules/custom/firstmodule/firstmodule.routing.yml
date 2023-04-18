@@ -71,4 +71,11 @@ firstmodule.delete_article:
   requirements:
     _access: 'TRUE'
     #   _entity_access: 'node.delete'
+firstmodule.company_form:
+  path: /company-form
+  defaults:
+    _form: Drupal\firstmodule\Form\CompanyForm
+    _title: 'Company Form'
+  requirements:
+    _access: 'TRUE'
 
