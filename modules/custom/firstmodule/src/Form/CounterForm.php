@@ -2,7 +2,6 @@
 
 namespace Drupal\firstmodule\Form;
 
-
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -24,7 +23,8 @@ class CounterForm extends FormBase {
    * @param FormStateInterface $form_state
    * @return array
    *
-   * Creating the Count form
+   * Creating the Counter form and incrementing it whenever we hit the increment button
+   * using ajaxRefresh callback method
    */
   public function buildForm(array $form, FormStateInterface $form_state)
   {
