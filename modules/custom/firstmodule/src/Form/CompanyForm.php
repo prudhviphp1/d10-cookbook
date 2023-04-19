@@ -40,6 +40,9 @@ class CompanyForm extends FormBase {
       '#type' => 'tel',
       '#title' => 'Company Telephone number',
       '#required' => TRUE,
+      #Adding the pattern which allows numbers(i.e 0-9) and dashes and paranthesis without
+      # any regular alphabetic characters
+      '#pattern' => '^[0-9-+\s()]*s',
       '#default_value' => $company_settings->get('company_telephone'),
     ];
 
