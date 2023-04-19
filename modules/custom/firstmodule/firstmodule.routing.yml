@@ -78,4 +78,11 @@ firstmodule.company_form:
     _title: 'Company Form'
   requirements:
     _access: 'TRUE'
+firstmodule.approval-form:
+  path: /approval-form
+  defaults:
+    _form: Drupal\firstmodule\Form\ApprovalRequiredForm
+    _title: 'Approval Form'
+  requirements:
+    _access: 'TRUE'
 
