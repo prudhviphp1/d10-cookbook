@@ -6,8 +6,8 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * We can also extend ConfigFormBase for retrieving the config data by using getEditable() method
- * rather than using getEditableConfigNames() method
+ * We can also extend ConfigFormBase for retrieving the config data by using getEditableConfigNames()  method
+ * rather than using getEditable() method
  */
 class CompanyForm extends FormBase {
 
