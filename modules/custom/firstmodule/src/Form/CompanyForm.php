@@ -55,6 +55,22 @@ class CompanyForm extends FormBase {
   }
 
   /**
+   * Validating the Input Form elements
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return void
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
+    //parent::validateForm($form, $form_state);
+    $company_name = $form_state->getValue('company_name');
+    if(str_contains($company_name, 'boo')) {
+      $form_state->setErrorByName('company_name','Name cannot contain "boo"' );
+    }
+  }
+
+  /**
    * Implement submitForm() method.
    *
    * @param array $form
