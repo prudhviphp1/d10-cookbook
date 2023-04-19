@@ -5,6 +5,10 @@ namespace Drupal\firstmodule\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * We can also extend ConfigFormBase for retrieving the config data by using getEditable() method
+ * rather than using getEditableConfigNames() method
+ */
 class CompanyForm extends FormBase {
 
   /**
