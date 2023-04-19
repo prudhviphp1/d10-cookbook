@@ -32,12 +32,14 @@ class CompanyForm extends FormBase {
     $form['company_name'] = [
       '#type' => 'textfield',
       '#title'=> 'Company Name',
+      '#required' => TRUE,
       '#default_value' => $company_settings->get('company_name'),
     ];
 
     $form['company_telephone'] = [
       '#type' => 'tel',
       '#title' => 'Company Telephone number',
+      '#required' => TRUE,
       '#default_value' => $company_settings->get('company_telephone'),
     ];
 
