@@ -65,6 +65,7 @@ class CompanyForm extends FormBase {
   {
     //parent::validateForm($form, $form_state);
     $company_name = $form_state->getValue('company_name');
+    //Checking if the company_name is set to boo then it should give the error
     if(str_contains($company_name, 'boo')) {
       $form_state->setErrorByName('company_name','Name cannot contain "boo"' );
     }
