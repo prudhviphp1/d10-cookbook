@@ -32,12 +32,17 @@ class CompanyForm extends FormBase {
     $form['company_name'] = [
       '#type' => 'textfield',
       '#title'=> 'Company Name',
+      '#required' => TRUE,
       '#default_value' => $company_settings->get('company_name'),
     ];
 
     $form['company_telephone'] = [
       '#type' => 'tel',
       '#title' => 'Company Telephone number',
+      '#required' => TRUE,
+      #Adding the pattern which allows numbers(i.e 0-9) and dashes and paranthesis without
+      # any regular alphabetic characters
+      '#pattern' => '^[0-9-+\s()]*s',
       '#default_value' => $company_settings->get('company_telephone'),
     ];
 
@@ -47,6 +52,23 @@ class CompanyForm extends FormBase {
       '#value' => 'Submit',
     ];
     return $form;
+  }
+
+  /**
+   * Validating the Input Form elements
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return void
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
+    //parent::validateForm($form, $form_state);
+    $company_name = $form_state->getValue('company_name');
+    //Checking if the company_name is set to boo then it should give the error
+    if(str_contains($company_name, 'boo')) {
+      $form_state->setErrorByName('company_name','Name cannot contain "boo"' );
+    }
   }
 
   /**
