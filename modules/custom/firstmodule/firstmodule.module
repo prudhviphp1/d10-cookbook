@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_page_top().
  */
@@ -98,4 +99,29 @@ function firstmodule_mail($key, &$message, $params) {
   $message['body'][] = 'The following node has been published:';
   $message['body'][] = $node->label();
   $message['body'][] = $node->toUrl()->setAbsolute()->toString();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ * @return void
+ */
+function firstmodule_form_system_site_information_settings_alter(array &$form, FormStateInterface $form_state, $form_id) {
+
+  // Modifying the existing 'system_site_information_settings' form to include site_phone field
+  $form['site_information']['site_phone'] = [
+    '#type' => 'tel',
+    '#title' => t("Site Phone"),
+    '#default_value' => \Drupal::config('system.site')->get('phone'),
+  ];
+
+  //calling the below method for getting the Submit value
+  $form['#submit'][] = 'firstmodule_system_site_information_phone_submit';
+}
+
+function firstmodule_system_site_information_phone_submit(array &$form, FormStateInterface $form_state) {
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('phone', $form_state->getValue('site_phone'));
 }
