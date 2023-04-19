@@ -85,4 +85,11 @@ firstmodule.approval-form:
     _title: 'Approval Form'
   requirements:
     _access: 'TRUE'
+firstmodule.counter-form:
+  path: /counter-form
+  defaults:
+    _form: Drupal\firstmodule\Form\CounterForm
+    _title: 'Counter Form'
+  requirements:
+    _access: 'TRUE'
 
