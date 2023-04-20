@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function thirdmodule_entity_bundle_info_alter(&$bundles) {
+
+  //overriding the recipe content type to follow the custom class business logic
+  $bundles['node']['recipe']['class'] = Drupal\mymodule\Entity\Recipe::class;
+}
