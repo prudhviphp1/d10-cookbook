@@ -125,3 +125,14 @@ function firstmodule_system_site_information_phone_submit(array &$form, FormStat
   $config = \Drupal::configFactory()->getEditable('system.site');
   $config->set('phone', $form_state->getValue('site_phone'));
 }
+
+/**
+ * Implements hook_block_alter()
+ * @param $definitions
+ * @return void
+ */
+function firstmodule_block_alter(&$definitions) {
+
+  // Altering the label of the user_logic_block
+  $definitions['user_login_block']['admin_label'] = t('Login');
+}
