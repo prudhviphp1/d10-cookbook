@@ -136,3 +136,17 @@ function firstmodule_block_alter(&$definitions) {
   // Altering the label of the user_logic_block
   $definitions['user_login_block']['admin_label'] = t('Login');
 }
+
+/**
+ * Implements hook_block_build_alter()
+ * @param array $build
+ * @param \Drupal\Core\Block\BlockPluginInterface $block
+ * @return void
+ */
+function firstmodule_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+
+  // Add the 'url' cache context to copyright block.
+  if ($block->id() == 'copyright_block') {
+    $build['#cache']['contexts'][] = 'url';
+  }
+}
