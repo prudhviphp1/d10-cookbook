@@ -1,0 +1,28 @@
+name: 'My Custom theme'
+type: theme
+'base theme': stable9
+starterkit: true
+libraries:
+  - mycustomtheme/base
+  - mycustomtheme/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - mycustomtheme/user
+  core/drupal.dropbutton:
+    - mycustomtheme/dropbutton
+  core/drupal.dialog:
+    - mycustomtheme/dialog
+  file/drupal.file:
+    - mycustomtheme/file
+  core/drupal.progress:
+    - mycustomtheme/progress
+  media/media_embed_ckeditor_theme:
+    - mycustomtheme/media_embed_ckeditor_theme
+  media_library/view:
+    - mycustomtheme/media_library
+  media_library/widget:
+    - mycustomtheme/media_library
+ckeditor_stylesheets:
+  - css/components/media-embed-error.css
+core_version_requirement: ^10
