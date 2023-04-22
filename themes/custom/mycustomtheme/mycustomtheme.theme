@@ -24,9 +24,21 @@ function mycustomtheme_preprocess_links__media_library_menu(array &$variables) {
 }
 
 /**
+ * Implements hook_form_alter().
+ *
+ * This targets/alters the form where the 'views_form_media_library' is present
+ */
+function mycustomtheme_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof ViewsForm && strpos($form_object->getBaseFormId(), 'views_form_media_library') === 0) {
+    $form['#attributes']['class'][] = 'media-library-views-form';
+  }
+}
+
+/**
  * Implements hook_preprocess_image_widget().
  *
- * THis blocks the image widget access for the users who don't have the permission to see it.
+ * This blocks the image widget access for the users who don't have the permission to see it.
  */
 function mycustomtheme_preprocess_image_widget(array &$variables) {
   $data = &$variables['data'];
