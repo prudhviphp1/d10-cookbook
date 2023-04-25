@@ -1,3 +1,13 @@
+theme-styling:
+  version: VERSION
+  css:
+    theme:
+      dist/styles.css: {}
+  js:
+    dist/scripts.js: {}
+  dependencies:
+    - core/drupal
+
 base:
   version: VERSION
   css:
