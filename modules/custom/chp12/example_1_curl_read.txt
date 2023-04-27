@@ -1,4 +1,4 @@
-//Checking the page where the title is present & title has 'Test' & node-page is 'title'
+//Getting the page details using curl where the title is present & title has 'Test' & node-page is 'title'
 
 curl \
   --header 'Accept: application/vnd.api+json' \
