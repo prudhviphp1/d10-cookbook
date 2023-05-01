@@ -3,3 +3,4 @@ type: module
 #creating custom entity type by using this fresh custom module
 description: This is an example module from the Drupal10 Development!!
 core_version_requirement: '>=10'
+#dglkhf
