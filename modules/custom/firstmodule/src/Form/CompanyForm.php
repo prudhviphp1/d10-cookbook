@@ -87,6 +87,6 @@ class CompanyForm extends FormBase {
     $config->set('company_name', $form_state->getValue('company_name'));
     $config->set('company_telephone', $form_state->getValue('company_telephone'));
     $config->save();
-    $this->messenger()->addStatus('Updated Copany Information');
+    $this->messenger()->addStatus('Updated Company Information');
   }
 }
