@@ -28,7 +28,7 @@ class HelloDrupalController extends ControllerBase {
    *
    * @returns array
    *   The render array.
-   * Defining Controller for routing with the user route parameter
+   * Defining Controller for routing with the user route parameter.
    */
   public function user(UserInterface $user): array {
     return [
