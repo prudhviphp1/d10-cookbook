@@ -17,7 +17,7 @@ function firstmodule_page_top() {
  * @return \Drupal\Core\Access\AccessResult|\Drupal\Core\Access\AccessResultAllowed|\Drupal\Core\Access\AccessResultNeutral
  */
 function firstmodule_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account) {
-
+  // Checking if the user has access to this 'entity_field' to promote the content
   $field_name = $field_definition->getName();
   if ($field_name === 'promote' || $field_name === 'sticky' ) {
     $can_promote_content_nodes = $account->hasPermission('can promote nodes');
