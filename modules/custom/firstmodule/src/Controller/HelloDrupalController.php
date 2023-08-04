@@ -12,7 +12,7 @@ class HelloDrupalController extends ControllerBase {
    *
    * @returns array
    *   The render array.
-   * Defining Controller for the routing
+   * Defining Controller for the routing "/hello-drupal" path page
    */
   public function page(): array {
     return [
