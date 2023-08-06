@@ -4,6 +4,7 @@ namespace Drupal\firstmodule\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Cache\CacheableMetadata;
 
 class RedirectController extends ControllerBase {
 
