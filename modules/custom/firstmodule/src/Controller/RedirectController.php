@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class RedirectController extends ControllerBase {
 
   /**
-   * Returns redirect to home or user login form.
+   * Returns redirect to home or user login form based on the status of user profile.
    *
    * @return \Symfony\Component\HttpFoundation\RedirectResponse
    *   The redirect response.
