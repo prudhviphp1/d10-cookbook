@@ -4,6 +4,8 @@ namespace Drupal\firstmodule\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+// Adding below Core Dependency for Caching.
+use Drupal\Core\Cache\CacheableMetadata;
 
 class RedirectController extends ControllerBase {
 
