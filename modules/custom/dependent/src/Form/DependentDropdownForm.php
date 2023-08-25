@@ -10,6 +10,7 @@ class DependentDropdownForm extends FormBase {
 
   /**
    * {@inheritdoc}
+   * Defining the getFormId for this form
    */
   public function getFormId() {
     return 'dependent_dropdown_Form';
@@ -17,6 +18,7 @@ class DependentDropdownForm extends FormBase {
 
   /**
    * {@inheritdoc}
+   * Defining the buildForm method
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $opt = static::foodCategory();
@@ -54,6 +56,7 @@ class DependentDropdownForm extends FormBase {
 
   /**
    * {@inheritdoc}
+   * Defining the submitForm method
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $trigger = (string) $form_state->getTriggeringElement()['#value'];
@@ -62,10 +65,16 @@ class DependentDropdownForm extends FormBase {
     }
   }
 
+  /**
+   * Defining DropdownCallback method
+   */
   public function DropdownCallback(array &$form, FormStateInterface $form_state) {
     return $form['availableitems'];
   }
 
+  /**
+   * Defining foodCategory method
+   */
   public function foodCategory() {
     return [
         'none' => '-none-',
@@ -74,6 +83,9 @@ class DependentDropdownForm extends FormBase {
     ];
   }
 
+  /**
+   * Defining availableItems method
+   */
   public function availableItems($cat) {
     switch ($cat) {
         case 'fruits':
