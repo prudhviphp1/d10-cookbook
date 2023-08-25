@@ -1,0 +1,4 @@
+name: Param Converter
+description: adding param converter feature
+type: module
+core_version_requirement: ^9 || ^10
