@@ -1,0 +1,11 @@
+welcome.page:
+  path: '\welcome\{user}'
+  defaults:
+    _controller: Drupal\param\Controller\WelcomePage::welcomePage
+    _title: Welcome Page
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:user
