@@ -5,12 +5,12 @@ namespace Drupal\custom_general\Controller;
 use Drupal\user\UserInterface;
 
 /**
- * Welcome message print.
+ * Welcome message to the user.
  */
 
 class WelcomePage {
     /**
-     * Welcome message.
+     * WelcomePage message.
      */
     public function welcomePage(UserInterface $user)
     {
