@@ -1,0 +1,5 @@
+name: Dependent dropdown feature
+description: Adding custom dependent dropdown feature
+type: module
+core_version_requirement: ^9 || ^10
+
