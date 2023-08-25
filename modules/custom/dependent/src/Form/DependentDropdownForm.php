@@ -19,6 +19,7 @@ class DependentDropdownForm extends FormBase {
   /**
    * {@inheritdoc}
    * Defining the buildForm method
+   * having the businesslogic for dropdown category
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $opt = static::foodCategory();
@@ -74,6 +75,7 @@ class DependentDropdownForm extends FormBase {
 
   /**
    * Defining foodCategory method
+   * having the option for foodCategory
    */
   public function foodCategory() {
     return [
