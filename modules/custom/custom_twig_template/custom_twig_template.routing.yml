@@ -1,0 +1,7 @@
+custom.template:
+  path: '/custom/twigtemplate'
+  defaults:
+    _controller: Drupal\custom_twig_template\Controller\CustomTwigTemplate::customTwigTemplate
+    _title: Custom Twig Template Page
+  requirements:
+    _permission: 'access_content'
