@@ -8,7 +8,7 @@ class CustomTwigTemplate {
 
      return [
        '#theme' => 'custom_twig_template',
-       '#text' => 'Welcome to our Custom Twig Template layer',
+       '#text' => 'Welcome to our Custom Twig Template Cookbook channel',
      ]
    }
 }
