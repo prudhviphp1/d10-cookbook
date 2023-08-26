@@ -1,0 +1,5 @@
+name: Custom Config Form
+#creating the custom configuration form through the custom module
+description: Creating the custom configuration form through the custom module
+type: module
+core_version_requirement: '^9 || >=10'
