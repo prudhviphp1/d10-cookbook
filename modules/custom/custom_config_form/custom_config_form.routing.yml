@@ -5,3 +5,8 @@ config.custom:
     _title: 'Custom Configuration Form'
   requirements:
     _permission: 'administer site configuration'
+  #Adding below options to make the above path to use the admin_theme if the path was not "/admin".
+  #In this case it was not necessary as the path includes '/admin' but just throwing it here for
+  #knowledge
+  options:
+    _admin_route: TRUE
