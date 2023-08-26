@@ -1,0 +1,4 @@
+name: Custom Twig Template
+description: Custom twig template creation in the custom module
+type: module
+core_version_requirement: ^9 || ^10
