@@ -61,5 +61,12 @@ class CustomUserDetails extends FormBase {
      **/
     public function submitForm(array &$form, FormStateInterface $form_state) {
         \Drupal::messenger()->addMessage("User Details Submitted Successfully");
+        $values = $form_state->getValues();
+        // Pushing the user details into the database & executing it
+        \Drupal::database()->insert('user_details')->fields([
+            'name' => $values['username'],
+            'mail' => $values['usermail'],
+            'gender' => $values['usergender'],
+        ])->execute();
     }
 }
