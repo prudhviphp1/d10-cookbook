@@ -18,6 +18,8 @@ class CustomUserDetails extends FormBase {
      * Defining the buildForm() method
      **/
     public function buildForm(array $form, FormStateInterface $form_state) {
+        // Adding the customjsform library to be only applied to this form.
+        $form['#attached']['library'][] = "custom_form/customjsform";
         $form['username'] = [
             '#type' => 'textfield',
             '#title' => 'User Name',
