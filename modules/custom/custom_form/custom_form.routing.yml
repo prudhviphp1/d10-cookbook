@@ -7,7 +7,7 @@ custom-user-form:
     _permission: 'user details custom form permission'
     # below line will give the access only for authenticated, content_editor & administrator(i.e as administrator)
     # will have the authenticated user access
-    #_role: 'authenticated + content_editor'
+    # _role: 'authenticated + content_editor'
     # below line will give access only to authenticated & content_editor. It doesn't give the access for
     # administrator
-    #_role: 'authenticated + content_editor'
+    # _role: 'authenticated + content_editor'
