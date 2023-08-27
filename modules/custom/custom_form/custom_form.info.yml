@@ -1,0 +1,4 @@
+name: Custom Form
+description: Gets user details & enforce the submit rules
+type: module
+core_version_requirement: ^9 | ^10
