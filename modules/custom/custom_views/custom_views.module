@@ -1,0 +1,12 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render
+ **/
+function custom_views_views_pre_render(ViewExecutable $view) {
+ if ( $view_id == "content_listing_view" && $view->getDisplay->display['id'] == "page_1" ) {
+ }
+}
+
