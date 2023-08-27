@@ -9,6 +9,8 @@ use Drupal\Core\TypedData\DataDefinition;
 
 /**
  * Define the "custom field type".
+ * As per the Drupal Community Guidelines, we need to specify the annotation for all
+ * the plugin types
  *
  * @FieldType(
  *   id = "custom_field_type",
