@@ -44,6 +44,9 @@ class CustomUserDetails extends FormBase {
         $form['submit'] = [
             '#type' => 'submit',
             '#value' => 'Submit',
+            '#ajax' => [
+               'callback' => '::setAjaxSubmit',
+            ],
         ];
         return $form;
     }
