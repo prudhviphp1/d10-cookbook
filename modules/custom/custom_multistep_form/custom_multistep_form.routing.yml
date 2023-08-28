@@ -1,0 +1,8 @@
+custom-multistep-form:
+  path: '/custom/multistep-form'
+  defaults:
+    _form: '\Drupal\custom_multistep_form\Form\CustomMultistepForm'
+    _title: 'Custom MultiStep Form'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated + content_editor'
