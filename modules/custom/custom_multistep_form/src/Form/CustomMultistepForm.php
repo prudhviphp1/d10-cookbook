@@ -11,8 +11,12 @@ class CustomMultistepForm extends FormBase {
         return "custom_multistep_form";
     }
 
+    /**
+     * {@inheritdoc}
+     * Defining the buildForm() method
+     **/
     public function buildForm(array $form, FormStateInterface $form_state) {
-
+        // "cpage" : Currentpage
         if ($form_state->has("cpage") && $form_state->get("cpage") == 2) {
             return $this->secondForm($form, $form_state);
         }
