@@ -18,6 +18,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *   description = @Translation("Description for Custom Field Type"),
  *   category = @Translation("Text"),
  *   default_widget = "custom_field_widget", (Adding the field_widget after the field_widget class has been created)
+ *   default_formatter = "custom_field_formatter", (Adding the field_formatter after the field_formatter class has been created)
  * )
  */
 
