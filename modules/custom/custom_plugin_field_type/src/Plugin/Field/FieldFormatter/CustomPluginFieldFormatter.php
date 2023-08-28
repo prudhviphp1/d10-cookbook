@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\custom_field_type\Plugin\Field\FieldFormatter;
+namespace Drupal\custom_plugin_field_type\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  * the plugin types
  *
  * @FieldFormatter(
- *   id = "custom_field_formatter",
+ *   id = "custom_plugin_field_formatter",
  *   label = @Translation("Custom Field Formatter"),
  *   description = @Translation("Description for Custom Field Formatter"),
  *   field_types = {
@@ -23,7 +23,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 
 
-class CustomFieldFormatter extends FormatterBase {
+class CustomPluginFieldFormatter extends FormatterBase {
 
     /**
      * {@inheritdoc}

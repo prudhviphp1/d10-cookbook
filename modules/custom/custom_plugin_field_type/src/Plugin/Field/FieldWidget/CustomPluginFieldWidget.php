@@ -1,27 +1,27 @@
 <?php
 
-namespace Drupal\custom_field_type\Plugin\Field\FieldWidget;
+namespace Drupal\custom_plugin_field_type\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Defining the "custom field widget".
+ * Defining the "custom plugin field widget".
  * As per the Drupal Community Guidelines, we need to specify the annotation for all
  * the plugin types
  *
  * @FieldWidget(
- *   id = "custom_field_widget",
- *   label = @Translation("Custom Field Widget"),
+ *   id = "custom_plugin_field_widget",
+ *   label = @Translation("Custom Plugin Field Widget"),
  *   description = @Translation("Description for Custom Field Widget"),
  *   field_types = {
- *     "custom_field_type"
+ *     "custom_plugin_field_type"
  *   }
  * )
  */
 
-class CustomFieldWidget extends WidgetBase {
+class CustomPluginFieldWidget extends WidgetBase {
 
     /**
      * {@inheritdoc}

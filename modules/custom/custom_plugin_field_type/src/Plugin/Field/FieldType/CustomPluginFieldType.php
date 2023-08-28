@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\custom_field_type\Plugin\Field\FieldType;
+namespace Drupal\custom_plugin_field_type\Plugin\Field\FieldType;
 
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -13,16 +13,16 @@ use Drupal\Core\TypedData\DataDefinition;
  * the plugin types
  *
  * @FieldType(
- *   id = "custom_field_type",
- *   label = @Translation("Custom Field Type"),
+ *   id = "custom_plugin_field_type",
+ *   label = @Translation("Custom Plugin Field Type"),
  *   description = @Translation("Description for Custom Field Type"),
  *   category = @Translation("Text"),
- *   default_widget = "custom_field_widget", (Adding the field_widget after the field_widget class has been created)
- *   default_formatter = "custom_field_formatter", (Adding the field_formatter after the field_formatter class has been created)
+ *   default_widget = "custom_plugin_field_widget", (Adding the field_widget after the field_widget class has been created)
+ *   default_formatter = "custom_plugin_field_formatter", (Adding the field_formatter after the field_formatter class has been created)
  * )
  */
 
-class CustomFieldType extends FieldItemBase {
+class CustomPluginFieldType extends FieldItemBase {
 
     /**
      * {@inheritdoc}

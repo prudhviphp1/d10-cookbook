@@ -1,5 +1,5 @@
-name: custom field type
+name: custom plugin field type
 # Creating the custom field type where we need to create the field_type, field_widget & field_formatter plugins
-description: creating the custom field type
+description: creating the custom Plugin field type
 type: module
 core_version_requirement: ^9 || ^10
