@@ -15,7 +15,7 @@ function firstmodule_install(){
 
  //function firstmodule_install($is_syncing) {
 
-
+  // * for invalidating the cache
   //Cache::invalidateTags([
    /   'node:3',
    /   'block_content:3',
