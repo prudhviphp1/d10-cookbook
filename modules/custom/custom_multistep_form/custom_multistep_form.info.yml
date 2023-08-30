@@ -1,4 +1,4 @@
 name: custom multistep form
-description: Custom Custom Form to have multistep option to collect the user details in Cookbook channel
+description: Creating Custom Form to have multistep option to collect the user details in Cookbook channel
 type: module
 core_version_requirement: ^9 || ^10
