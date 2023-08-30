@@ -12,3 +12,20 @@ function firstmodule_install(){
     ->save();
 
 }
+
+ //function firstmodule_install($is_syncing) {
+
+
+  //Cache::invalidateTags([
+   /   'node:3',
+   /   'block_content:3',
+   /   'rendered',
+  //]);
+
+  //module hooks
+  //module_set_weight('firstmodule', 6); // setting module weights hooks
+
+  // Set general module variables.
+  //\Drupal::state()
+  //  ->set('mymodule.foo', 'bar');
+}
