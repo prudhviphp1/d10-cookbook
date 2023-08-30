@@ -1,6 +1,8 @@
 <?php
 /**
  * Implements hook_install
+ * Whatever the changes defined in this method will only occur if this custmo_module
+ * has been installed
  */
 function firstmodule_install(){
   //Setting the custom site name
