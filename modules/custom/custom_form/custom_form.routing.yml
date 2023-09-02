@@ -11,3 +11,10 @@ custom-user-form:
     # below line will give access only to authenticated & content_editor. It doesn't give the access for
     # administrator
     # _role: 'authenticated, content_editor'
+custom-modal-page:
+  path: '/modal-form-link'
+  defaults:
+    _controller: '\Drupal\custom_form\Controller\CustomController::modalLink'
+    _title: 'Open Modal Page'
+  requirements:
+    _permission: 'access content'

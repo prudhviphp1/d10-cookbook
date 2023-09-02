@@ -4,6 +4,8 @@ namespace Drupal\custom_form\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
 
 class CustomUserDetails extends FormBase {
     /**
@@ -42,9 +44,18 @@ class CustomUserDetails extends FormBase {
         $form['submit'] = [
             '#type' => 'submit',
             '#value' => 'Submit',
+            '#ajax' => [
+               'callback' => '::setAjaxSubmit',
+            ],
         ];
         return $form;
     }
+
+     public function setAjaxSubmit() {
+            $response = new AjaxResponse();
+            $response->addCommand(new InvokeCommand("html", 'datacheck'));
+            return $response;
+     }
 
     /**
      * Defining the validateForm() method
