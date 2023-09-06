@@ -1,5 +1,7 @@
 name: Custom Config Override Example
+#creating the custom config to override the core config by using the custom module
 description: Provide a configuration override from custom module
+# adding this custom module under 'Custom' package
 package: Custom
 type: module
 core_version_requirement: ^9 || ^10
