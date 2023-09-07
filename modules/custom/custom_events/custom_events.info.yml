@@ -1,0 +1,5 @@
+name: Custom Events
+#creating custom event for user login through custom module
+description: Custom event for user login
+type: module
+core_version_requirement: ^9 || ^10
