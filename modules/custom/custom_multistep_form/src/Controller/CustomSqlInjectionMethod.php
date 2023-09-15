@@ -21,7 +21,7 @@ $articleCount = getArticleNodeCount();
 print('Total number of Article nodes: ' . $articleCount);
 
 
-
+// Using the following procedure queries to avoid the SQLInjection attacks
 $username = $_POST['username'];
 $query = "SELECT * FROM {users} WHERE name = :username";
 $result = db_query($query, [':username' => $username]);
