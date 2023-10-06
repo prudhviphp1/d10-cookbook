@@ -27,6 +27,8 @@ class UserLoginSubscriber implements EventSubscriberInterface {
    *
    * @param \Drupal\custom_events\Event\UserLoginEvent $event
    *   Our custom event object.
+   *
+   *  Grabbing the date of  user_creation date & amending it to be in short date
    */
   public function onUserLogin(UserLoginEvent $event) {
     $database = \Drupal::database();
