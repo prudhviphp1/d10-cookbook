@@ -51,6 +51,9 @@ class CustomUserDetails extends FormBase {
         return $form;
     }
 
+    /**
+     * keeping the placeholder to define whats going on in the below method
+     */
      public function setAjaxSubmit() {
             $response = new AjaxResponse();
             $response->addCommand(new InvokeCommand("html", 'datacheck'));
