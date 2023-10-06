@@ -48,7 +48,7 @@ class CustomConfigForm extends CustomConfigForm {
              '#title' => 'Last Name',
              '#default_value' => $configform->getValue('lastname');
           ],
-          return parent::buildForm($$form,$form_state);
+          return parent::buildForm($form,$form_state);
         }
 
         /**
