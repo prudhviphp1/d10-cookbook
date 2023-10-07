@@ -66,7 +66,7 @@ class CustomConfigForm extends CustomConfigForm {
              '#description' => "Contains node reference",
              '#default_value' => $contents,
           ];
-          return parent::buildForm($form,$form_state);
+          return parent::buildForm($$form,$form_state);
         }
 
         /**
