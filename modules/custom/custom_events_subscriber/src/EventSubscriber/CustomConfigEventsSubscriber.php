@@ -7,10 +7,11 @@ use Drupal\Core\Config\ConfigEvents;
 use Drupal\Core\Config\ConfigCrudEvent;
 
 class CustomConfigEventsSubscriber implements EventSubscriberInterface {
-    /**
+  /**
    * {@inheritdoc}
    *
    * @return array
+   * Defining the getSubscribedEvents method
    */
   public static function getSubscribedEvents() {
     $events[ConfigEvents::SAVE][] = ['configSave', -100];
@@ -18,7 +19,11 @@ class CustomConfigEventsSubscriber implements EventSubscriberInterface {
     return $events;
     }
 
-    public function configSave(ConfigCrudEvent $event) {
+    /**
+     *Defining the configSave method which is called above
+     *
+     */
+      public function configSave(ConfigCrudEvent $event) {
         $config = $event->getConfig();
         \Drupal::messenger()->addStatus('Saved config: ' . $config->getName());
       }
