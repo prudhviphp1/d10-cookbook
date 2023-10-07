@@ -1,6 +1,8 @@
 <?php
 /**
  * Implements hook_install
+ * Whatever the changes defined in this method will only occur if this custmo_module
+ * has been installed
  */
 function firstmodule_install(){
   //Setting the custom site name
@@ -9,4 +11,21 @@ function firstmodule_install(){
     ->set('name','Welcome to Drupal10 Development')
     ->save();
 
+}
+
+ //function firstmodule_install($is_syncing) {
+
+  // * for invalidating the cache
+  //Cache::invalidateTags([
+   /   'node:3',
+   /   'block_content:3',
+   /   'rendered',
+  //]);
+
+  //module hooks
+  //module_set_weight('firstmodule', 6); // setting module weights hooks
+
+  // Set general module variables.
+  //\Drupal::state()
+  //  ->set('mymodule.foo', 'bar');
 }

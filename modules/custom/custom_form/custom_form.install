@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implement hook_schema().
+ * Giving the details of the schema so that it can be stored correspondingly in database
+ */
+
+function custom_form_schema() {
+    $schema['user_details'] = [
+        'description' => 'Contains User details',
+        'fields' => [
+            'id' => [
+                'description' => 'Holds the Id',
+                'type' => 'serial',
+                'not null' => true,
+                'unsigned' => true,
+            ],
+            'name' => [
+                'description' => 'Username',
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => true,
+            ],
+            'mail' => [
+                'description' => 'User Email id',
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => true,
+            ],
+            'gender' => [
+                'description' => 'User Gender',
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => true,
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+    return $schema;
+}
