@@ -88,6 +88,7 @@ class CustomConfigForm extends CustomConfigForm {
          $configform = $this->config(static::CONFIGNAME);
                  ->set('firstname', $this->config->getValue('firstname');
                  ->set('lastname', $this->config->getValue('lastname');
+                 ->set('lastname', $this->config->getValue('contents');
                  ->save();
          */
         }
