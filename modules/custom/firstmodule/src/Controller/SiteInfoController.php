@@ -4,6 +4,7 @@ namespace Drupal\firstmodule\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\Core\Cache\CacheableDependencyInterface
 
 class SiteInfoController extends ControllerBase {
 
