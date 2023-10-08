@@ -34,7 +34,7 @@ firstmodule.pdf_download:
   path: /pdf_download
   defaults:
     _controller: Drupal\firstmodule\Controller\DownloadController::page
-    _title: Download the PDF
+    _title: 'Download the PDF!'
   requirements:
     _access: 'TRUE'
 firstmodule.create_article:
