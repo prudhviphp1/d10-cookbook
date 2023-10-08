@@ -21,6 +21,7 @@ firstmodule.user_redirect:
   path: /user-redirect
   defaults:
     _controller: Drupal\firstmodule\Controller\RedirectController::page
+    #making this route publicly accesssible for all the users for everyone (i.e anonymous/authenticated)
   requirements:
     _access: 'TRUE'
 firstmodule.site_info:
