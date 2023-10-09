@@ -6,5 +6,5 @@
 function thirdmodule_entity_bundle_info_alter(&$bundles) {
 
   //overriding the recipe content type to follow the custom class business logic
-  $bundles['node']['recipe']['class'] = Drupal\mymodule\Entity\Recipe::class;
+  $bundles['node']['recipe']['class'] = Drupal\thirdmodule\Entity\Recipe::class;
 }
