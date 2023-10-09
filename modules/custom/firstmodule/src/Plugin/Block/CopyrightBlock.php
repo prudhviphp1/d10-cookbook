@@ -10,6 +10,7 @@ use Drupal\Core\Block\BlockBase;
  *   admin_label = @Translation("CopyrightBlock"),
  *   category = @Translation("Custom"),
  * )
+ * Defining the Plugin Annotations for Copyright Block
  */
 class CopyrightBlock extends BlockBase {
 
