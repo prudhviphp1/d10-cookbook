@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\custom_general\Controller;
+namespace Drupal\param\Controller;
 
 use Drupal\user\UserInterface;
 
