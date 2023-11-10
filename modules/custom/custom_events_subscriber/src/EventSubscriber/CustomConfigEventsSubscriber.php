@@ -20,7 +20,7 @@ class CustomConfigEventsSubscriber implements EventSubscriberInterface {
     }
 
     /**
-     *Defining the configSave method which is called above
+     * Defining the configSave method which is called above
      *
      */
       public function configSave(ConfigCrudEvent $event) {
@@ -28,6 +28,10 @@ class CustomConfigEventsSubscriber implements EventSubscriberInterface {
         \Drupal::messenger()->addStatus('Saved config: ' . $config->getName());
       }
 
+      /**
+      * Defining the configDelete method which is called above
+      *
+      */
       public function configDelete(ConfigCrudEvent $event) {
         $config = $event->getConfig();
         \Drupal::messenger()->addStatus('Deleted config: ' . $config->getName());
