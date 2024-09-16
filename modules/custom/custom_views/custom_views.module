@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+
+/**
+ * Implements hook_views_pre_render
+ **/
+function custom_views_views_pre_render(ViewExecutable $view) {
+ if ( $view_id == "content_listing_view" && $view->getDisplay->display['id'] == "page_1" ) {
+ }
+}
+
+/**
+ * Implements hook_views_post_render
+ **/
+function custom_views_views_post_render(ViewExecutable $view,array &$output, CachePluginBase $cache) {
+ if ( $view_id == "content_listing_view" && $view->getDisplay->display['id'] == "page_1" ) {
+ }
+}
+
