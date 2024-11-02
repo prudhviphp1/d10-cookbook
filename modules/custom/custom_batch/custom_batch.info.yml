@@ -1,4 +1,5 @@
 name: Custom Batch Process
-description: Example of Custom batch Process
+# Creating the custom_batch process flow
+description: Adding the Custom batch Process
 core_version_requirement: ^9 || ^10
 type: module
