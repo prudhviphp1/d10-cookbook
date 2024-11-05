@@ -5,5 +5,6 @@ batch.process:
     _title: 'Configuration Form with batch process'
   requirements:
     _permission: 'access content'
+  # This below is ONLY for who has admin access
   options:
     _admin_route: TRUE
