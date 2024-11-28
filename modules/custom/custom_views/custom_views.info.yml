@@ -1,0 +1,4 @@
+name: Custom Views
+description: adding the pre-view & post-view render for the view
+type: module
+core_version_requirement: ^9 || ^10
