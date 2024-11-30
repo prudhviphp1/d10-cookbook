@@ -5,6 +5,9 @@ namespace Drupal\custom_batch\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+// adding the use class for messenger as it's recommended to use Dependency Injection
+// rather than using it as static class
+use Drupal\Core\Messenger\MessengerInterface;
 
 class CustomBatchProcess extends ConfigFormBase {
 
@@ -128,6 +131,7 @@ class CustomBatchProcess extends ConfigFormBase {
         // If batch process is failed.
         $message = t('Finished with an error.');
       }
+      // just adding a placeholder to show the message in message queue of what's going on
       \Drupal::messenger()->addMessage($message);
     }
 
