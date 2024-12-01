@@ -1,3 +1,5 @@
+#Adding Github actions workflow method for automating the changes
+#when Pull Requests are made
 name: PHP Composer
 
 on:
