@@ -4,4 +4,5 @@ services:
     tags:
       - { name: module_install.uninstall_validator }
     arguments: ['@entity_type.manager']
+    # This is a lazy service, so it will only be instantiated if it is used.
     lazy: true
